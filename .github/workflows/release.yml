@@ -2,8 +2,11 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
 jobs:
   build:
